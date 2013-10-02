@@ -48,16 +48,16 @@
   font-size: @font-size;
   font-weight: @font-weight;
   line-height: 1.45;
-  text-align: center;
+  text-align: left;
 }
 //Cool Header
 #cool-header{
     position: fixed;
     top:0px;
     left:0px;
-    -moz-box-shadow:    0 2px 1px 2px @custom-color;
-    -webkit-box-shadow: 0 2px 1px 2px @custom-color;
-    box-shadow:         0 2px 1px 2px @custom-color;
+    -moz-box-shadow:    0 1px 5px -3px @custom-color;
+    -webkit-box-shadow: 0 1px 4px -3px @custom-color;
+    box-shadow:         0 1px 4px -3px @custom-color;
     background:#fff;
     width:100%;
     z-index:1000;
@@ -87,6 +87,8 @@
     display: inline-block;
     border-left:6px solid @custom-color;
     padding-left:20px;
+    position:relative;
+    left:-20px;
   }
   b, strong { 
     font-weight: 700; 
@@ -114,7 +116,7 @@
 }
 #main-content { 
     margin: 0 auto; 
-    background-color: black;
+    background-color: white;
 }
 
 // Logo helper
@@ -127,7 +129,7 @@
   margin: 50px auto;
 
   .pop-title-text();
-  text-align: center;
+  text-align:left;
 }
 .columnizer-row-inner{
     background-color: white;
@@ -136,7 +138,7 @@
 // Assets
 .asset-title {
   .headline-text();
-  margin: 10px 0;
+  margin: 15px 0 25px 0;
   i{font-size: 33px;}
 }
 
@@ -188,14 +190,15 @@
             border-radius: 50%; 
             overflow: hidden;
            }
-         
-        .doc-title{
-            max-width:50px;
-         }
-        .download-button{
-            width:120px;
-            margin-bottom:10px;
-        }
+         //Docs
+            .doc-title{
+                max-width:50px;
+             }
+            .download-button{
+                width:120px;
+                margin-bottom:10px;
+            }
+            //
         } 
         
         .columnizer-col:nth-of-type(2){
@@ -273,7 +276,11 @@
     }
   }
 }
-
+//embed
+.embedded-object{
+    margin-bottom:10px;
+}
+//text-align for cols3
 .columnizer-cols3{
         .columnizer-col:nth-of-type(1),.columnizer-col:nth-of-type(3){
             .doc-title{
@@ -285,7 +292,20 @@
             }
         } 
 }
+.columnizer-cols3{
+        .columnizer-col:nth-of-type(1){
+            .asset-title {
+                text-align: right;
+            }
+            .description, .body, .description li, .body li,  {
+                text-align: right;
+            }
+        }
 
+        .columnizer-col:nth-of-type(3){
+            text-align: left;
+        }
+}
 // Clearfix
 .clearfix:after {
   visibility: hidden;
