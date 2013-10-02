@@ -53,15 +53,20 @@
 //Cool Header
 #cool-header{
     position: fixed;
-    -moz-box-shadow:    0 3px 2px 2px @custom-color;
-    -webkit-box-shadow: 0 3px 2px 2px @custom-color;
-    box-shadow:         0 3px 2px 2px @custom-color;
-    background-color: white;
-`   top:0;
-    left:0;
+    top:0px;
+    left:0px;
+    -moz-box-shadow:    0 2px 1px 2px @custom-color;
+    -webkit-box-shadow: 0 2px 1px 2px @custom-color;
+    box-shadow:         0 2px 1px 2px @custom-color;
+    background:#fff;
+    width:100%;
+    z-index:1000;
+    overflow:hidden;
+    height:60px;
     #cool-header-inner{
+        background-color:#fff;
         width:760px;
-        padding:70px;
+        padding:6px 70px;
         margin:0 auto;
         #pop-logo{max-width:120px;float:left;}
         #pop-sharing{float:left;max-width:570px;}
@@ -103,6 +108,10 @@
 // Structure
 
 // Content wrapper
+#main-region{
+    position:relative;
+    top:60px;
+}
 #main-content { 
     margin: 0 auto; 
     background-color: black;
