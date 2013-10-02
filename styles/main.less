@@ -50,8 +50,25 @@
   line-height: 1.45;
   text-align: center;
 }
-
+//Cool Header
+#cool-header{
+    position: fixed;
+    -moz-box-shadow:    0 3px 2px 2px @custom-color;
+    -webkit-box-shadow: 0 3px 2px 2px @custom-color;
+    box-shadow:         0 3px 2px 2px @custom-color;
+    background-color: white;
+`   top:0;
+    left:0;
+    #cool-header-inner{
+        width:760px;
+        padding:70px;
+        margin:0 auto;
+        #pop-logo{max-width:120px;float:left;}
+        #pop-sharing{float:left;max-width:570px;}
+    }
+}
 #pop {
+  margin-top: 0;
   font-family: @body-font-family;
   color: @text-color;
   i, em { 
