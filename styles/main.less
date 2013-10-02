@@ -49,6 +49,7 @@
   font-weight: @font-weight;
   line-height: 1.45;
   text-align: left;
+  font-style: normal;
 }
 //Cool Header
 #cool-header{
@@ -69,7 +70,7 @@
         padding:6px 70px;
         margin:0 auto;
         #pop-logo{max-width:120px;float:left;}
-        #pop-sharing{float:left;max-width:570px;}
+        #pop-sharing{float:right;width:570px;}
     }
 }
 #pop {
@@ -86,9 +87,9 @@
   i{
     display: inline-block;
     border-left:6px solid @custom-color;
-    padding-left:20px;
-    position:relative;
-    left:-20px;
+    padding:2px 0 2px 20px;
+    position: relative;
+    left: -20px;
   }
   b, strong { 
     font-weight: 700; 
@@ -120,7 +121,7 @@
 }
 
 // Logo helper
-#pop-logo { margin: 20px auto; }
+#pop-logo { margin: 0 auto; }
 
 // Pop title
 #pop-title {
@@ -280,6 +281,7 @@
 .embedded-object{
     margin-bottom:10px;
 }
+
 //text-align for cols3
 .columnizer-cols3{
         .columnizer-col:nth-of-type(1),.columnizer-col:nth-of-type(3){
@@ -306,6 +308,10 @@
             text-align: left;
         }
 }
+//asset title-italic margin left-removing
+.asset-title p i{border-left: none!important}
+
+
 // Clearfix
 .clearfix:after {
   visibility: hidden;
