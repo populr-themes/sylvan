@@ -68,7 +68,7 @@
     #cool-header-inner{
         background-color:#fff;
         width:760px;
-        padding:8px 70px;
+        padding:14px 70px;
         margin:0 auto;
         #pop-logo{max-width:120px;float:left;}
         #pop-links {float:right; width:570px; text-align:right!important;}
@@ -115,7 +115,7 @@
 // Content wrapper
 #my-container{
     position: relative;
-    top:64px;
+    top:76px;
 }
 
 #main-region{
@@ -125,17 +125,20 @@
 
 #main-content { 
     margin: 0 auto; 
-    background-color: white;
+    background-color: transparent;
 }
 
 // Logo helper
 #pop-logo { margin: 0 auto; }
 
 // Pop title
+#my-pop-title{
+    width: 760px;
+    padding: 20px 70px 40px!important;
+    margin: 0 auto!important;
+    overflow: hidden;
+}
 #pop-title {
-  width: 760px;
-  padding: 20px 70px 40px!important;
-  margin: 0 auto!important;
   background-color: white;
   .pop-title-text();
   text-align: center;
@@ -226,7 +229,7 @@
       .download-button{
         border:0;
         margin-bottom:8px;
-        width:148px!important;
+        width:152px!important;
         float: left;
         margin: 0 10px 8px 0;
         color: #fff;
@@ -301,13 +304,17 @@
     margin:50px auto 0;
     width:700px;
     background-color: lightgray;
-    height:2px;
-    //without this div margin bottom was not working
-    div{
-        height:40px
-    }
-}
+    height:1px;
 
+
+}
+//without this div margin bottom was not working
+div#bottom-margin{
+    height:40px;
+    background-color: transparent;
+    max-width:900px;
+    margin:0 auto;
+}
 
 
 // Clearfix
