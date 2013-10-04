@@ -2,13 +2,12 @@
 
 $(document).on('pop-initialized', function(){
     $(".asset-inner").each(function(){
-        if($(this).children(".asset-title")){
-            alert($(this).children(".asset-title").html());
+        if($(this).children(".asset-title")=== undefined){
+              alert("what the hack");
+              $(this).append('<hr class="cool-hr-tag">');
         }
         else{
-            $(this).append('<hr class="cool-hr-tag">');
-            alert('else');
+            //
         }
     });
-    
 });
