@@ -91,30 +91,18 @@
                 .asset{padding-right:70px;}
             }
         }
-	.columnizer-cols3 & { width: 300px;
-            &:nth-of-type(1){
-                .asset{padding-left:70px;}
-            }
-            &:nth-of-type(3){
-                .asset{padding-right:70px;}
-            }
+}
+
+.columnizer-col {
+	.columnizer-cols3 & { width: 206px;
+		margin-left: 70px;
+                float: left;
+            &:last-child { margin-right: 72px; }
+            .asset{padding:0;}
 	}
 }
 
 
-.columnizer-cols3{
-        .columnizer-col:nth-of-type(1){
-            width:225px;
-        } 
-        
-        .columnizer-col:nth-of-type(2){
-            width:450px;
-        }
-        
-        .columnizer-col:nth-of-type(3){
-            width:225px;
-        }
-}
 
 
 // clearfix for columnizer rows

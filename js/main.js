@@ -1,9 +1,14 @@
-/************************************************************************
-// For extensive details about creating a Populr theme, please visit
-// http://developers.populr.me/theming
-*/
 
 
-// $(document).on('pop-initialized', function(){
-//
-// });
+$(document).on('pop-initialized', function(){
+    
+    $(".asset-inner").each(function(){
+        if($(this).children(".asset-title")){
+            //
+        }
+        else{
+            $(this).append('<hr class="cool-hr-tag">');
+        }
+    });
+    
+});

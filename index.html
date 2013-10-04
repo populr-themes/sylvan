@@ -51,7 +51,7 @@
      <div id="cool-header">
         <div id="cool-header-inner">
             {{logo max_width=120 max_height=48}}
-            {{sharing}}
+            {{pop_links}}
         </div>
      </div>
 
@@ -73,26 +73,25 @@
       {{/asset}}
 
       {{#asset "imagegroup" size="1"}}
-        {{{imageslider images width="760" height="597"}}}
+        {{{imageslider images width="760" height="450"}}}
         {{{title}}}
         {{{description}}}
       {{/asset}}
  
       {{#asset "imagegroup" size="2"}}
-        {{{imageslider images width="345" height="323"}}}
+        
+        {{{imageslider images width="345" height="230"}}}
         {{{title}}}
         {{{description}}}
+      
       {{/asset}}
   
       {{#asset "imagegroup" size="3"}}
-        <div class="cols3-big-image">
-            {{{imageslider images width="380" height="230"}}}
-        </div>
-        <div class="cols3-small-image">
-            {{{imageslider images width="120" height="120"}}}
-        </div>
+       
+        {{{imageslider images width="206" height="230"}}}
         {{{title}}}
         {{{description}}}
+      
       {{/asset}}
   
       {{#asset "documentgroup" size="1"}}
@@ -101,7 +100,7 @@
         <ul class="documents">
           {{#documents}}
             {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
-            <li><a href="{{original_url}}"><div class="download-button"><i class="icon icon-download-alt" /></div><div class="doc-title">{{title}}</div></a></li>
+            <li><a href="{{original_url}}"><button class="download-button link-btn"><i class="icon icon-download-alt"/><span>Download</span></button><div id="doc-title">{{title}}</div></a></li>
           {{/documents}}
         </ul>
       {{/asset}}
@@ -112,7 +111,7 @@
         <ul class="documents">
           {{#documents}}
             {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
-            <li><a href="{{original_url}}"><div class="download-button"><i class="icon icon-circle-arrow-right" /></div><div class="doc-title">{{title}}</div></a></li>
+            <li><a href="{{original_url}}"><button class="link-btn download-button link-btn"><i class="icon icon-download-alt" /><span>Download</span></button><div id="doc-title">{{title}}</div></a></li>
           {{/documents}}
         </ul>
       {{/asset}}
@@ -123,12 +122,12 @@
         <ul class="documents">
           {{#documents}}
             {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
-            <li><a href="{{original_url}}"><div class="download-button"><i class="icon icon-circle-arrow-right" /></div><div class="doc-title">{{title}}</div></a></li>
+            <li><a href="{{original_url}}"><button class="download-button link-btn"><i class="icon icon-download-alt" /><span>Download</span></button><div id="doc-title">{{title}}</div></a></li>
           {{/documents}}
         </ul>
       {{/asset}}
  
-      {{#asset "embedgroup" size="1" width="920"}}
+      {{#asset "embedgroup" size="1" width="760" height="450"}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
@@ -136,7 +135,7 @@
         {{{description}}}
       {{/asset}}
 
-      {{#asset "embedgroup" size="2" width="430"}}
+      {{#asset "embedgroup" size="2" width="345" height="230"}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
@@ -153,8 +152,8 @@
       {{/asset}}
     
     {{/region}}
-
-    {{pop_links}}
+    {{sharing}}
+    
 
   </script>
 </body>
