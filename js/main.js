@@ -5,7 +5,7 @@ $(document).on('pop-initialized', function(){
         
         alert($(this).children(".asset-title").html());
         
-        if($(this).children(".asset-title")=== undefined){
+        if($(this).children(".asset-title").html() === undefined){
               alert("what the hack");
               $(this).append('<hr class="cool-hr-tag">');
         }
