@@ -54,7 +54,10 @@
             {{pop_links}}
         </div>
      </div>
-
+    <div id="my-container">
+    
+    {{{title}}}
+    
     {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|T-1,T-1|T-1,T-1,T-1|I-1|I-2|I-1,I-2|I-1,I-2,I-3|V-1|V-2|V-1,V-2|V-1,V-2,V-3|D-1|D-3|D-1,D-3|D-1,D-2,D-3|E-1|E-2|E-1,E-2|E-1,E-2,E-3"}}
       
       {{#asset "text" size="1"}}
@@ -143,7 +146,7 @@
         {{{description}}}
       {{/asset}}
 
-      {{#asset "embedgroup" size="3" width="266"}}
+      {{#asset "embedgroup" size="3" width="266" height="230"}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
@@ -152,8 +155,12 @@
       {{/asset}}
     
     {{/region}}
-    {{sharing}}
+     
     
+    <div class="footer"><div></div></div>
+    
+    {{sharing}}
+    </div>
 
   </script>
 </body>
