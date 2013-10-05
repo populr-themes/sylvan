@@ -15,7 +15,8 @@
 
 // Call preboot.less's reset to reduce browser inconsistencies
 #reset > .global-reset();
-#populr > .inline-logo-title();
+//#populr > .inline-logo-title();
+#populr > .text-color-over-color(@custom-color);
 /////////////////////////////////////////////////////////////////////////
 // Typography defaults
 
@@ -37,10 +38,18 @@
 .pop-title-text() {
   font-family: @headline-font-family;
   font-size: 38px;
-  font-weight:bold;
+  font-weight: bold;
   line-height: 1.1;
 }
-
+.cool-i-tag(@font-size:22px){
+    display: inline-block;
+    border-left:6px solid @custom-color;
+    padding:2px 0 2px 20px;
+    position: relative;
+    left: -20px;
+    font-size:@font-size;
+    line-height:1.4;
+}
 // Body text defaults
 @body-font-family: @italic-font;
 
@@ -62,14 +71,15 @@
     box-shadow:         0 4px 2px -2px lightgray;
     background:#fff;
     width:100%;
-    z-index:1000;
+    z-index:1000!important;
     overflow:hidden;
-    padding:14px 0;
+    padding:10px 0;
+    opacity:.8;
     #cool-header-inner{
         background-color:#fff;
         width:760px;
         padding:0 70px;
-        height:30px;
+        height:40px;
         margin:0 auto;
         #pop-logo{max-width:120px;float:left;}
         #pop-links {float:right; width:570px; text-align:right!important;margin:0!important;}
@@ -87,15 +97,7 @@
     font-weight: 400;
     line-height: 1.2;
   }
-  i{
-    display: inline-block;
-    border-left:6px solid @custom-color;
-    padding:2px 0 2px 20px;
-    position: relative;
-    left: -20px;
-    font-size:22px;
-    line-height:31px;
-  }
+  
   b, strong { 
     font-weight: 700; 
     font-family:@bold-font;
@@ -121,7 +123,6 @@
     top:60px;
     width:900px;
     margin:0 auto;
-    background-color: white;
 }
 
 #main-region{
@@ -141,29 +142,25 @@
 #my-pop-title{
     width: 760px;
     padding: 20px 70px 40px!important;
-    margin: 0 auto!important;
+    margin: 30px auto 0!important;
     overflow: hidden;
-    background-color: white;
     text-align: center;
 }
 #pop-title {
-  .pop-title-text();
-  text-align: center!important;
-  padding:0!important;
-  i{
-    border: none;
-    padding-left:0;
-  }
+    .pop-title-text();
+    text-align: center!important;
+    padding:0!important; 
+    font-size:42px;
 }
 .columnizer-row-inner{
     background-color: white;
+    opacity:.9;
 }
 
 // Assets
 .asset-title {
   .headline-text();
   margin: 20px 0 25px 0;
-  i{font-size: 33px!important;}
 }
 
 .description, .body {
@@ -174,39 +171,51 @@
   ul li { list-style-type: disc; }
   ol li { list-style-type: decimal; }
 }
-
+//deffault i tag for asset-title
+.asset-title{
+    i{border-left:none!important;padding-left:0!important;}
+}
+// Text styling
 .columnizer-cols1{
   .asset-title {
-    .headline-text(48px;bold);
+    .headline-text(38px;bold);
+    i{font-size:30px;}
   }
   .description, .body, .description li, .body li,  {
     .body-text(22px;400;@italic-font);
+    i{
+        .cool-i-tag(22px);
+    }
   }
 }
 .columnizer-cols2{
   .asset-title {
     .headline-text(38px;bold);
+    i{font-size:30px;}
   }
   .description, .body, .description li, .body li,  {
     .body-text(19px;400;@italic-font);
+    i{
+        .cool-i-tag(19px);
+    }
   }
 }
+
 .columnizer-cols3{
   .asset-title {
     .headline-text(30px;bold);
+    i{font-size:22px;}
   }
 
 .description, .body, .description li, .body li,  {
     .body-text(17px;400;@italic-font);
-    }
+    i{.cool-i-tag(17px);}
+   }
+  
 }
-
-
-// Text asset styling
-
-
 // Image asset styling
 #populr > #image-slider-themes > .basic();
+
 .prevnext{display:none!important;}
 
 
@@ -241,11 +250,11 @@
       .download-button{
         border:0;
         margin-bottom:8px;
-        width:158px!important;
+        min-width:158px!important;
         float: left;
         margin: 0 10px 8px 0;
         color: #fff;
-        font-size: 14px;
+        font-size: 13px;
         text-align: center;
         text-decoration: none;
         font-style: normal;
@@ -258,7 +267,7 @@
         vertical-align: baseline;
         text-shadow: none!important;
         font-family:@body-font-family;
-        font-size:14px;
+        font-size:13px;
         font-weight:400;
       }
       i.icon { font-style: normal !important; text-align: center; vertical-align: middle; top:-1px;}
@@ -303,8 +312,7 @@
             text-align: left;
         }
 }
-//asset title-italic margin left-removing
-.asset-title p i{border-left: none!important}
+
 
 .cool-hr-tag{
     display: block;
@@ -327,8 +335,13 @@ div#bottom-margin{
     max-width:900px;
     margin:0 auto;
 }
-
-
+//pop-shearing last element (a tag) was block elemnt in firefox
+#pop-shearing {
+    text-align: center;
+    a{
+        display: inline-block !important;
+    }
+}
 // Clearfix
 .clearfix:after {
   visibility: hidden;
