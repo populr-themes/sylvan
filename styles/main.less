@@ -16,7 +16,7 @@
 // Call preboot.less's reset to reduce browser inconsistencies
 #reset > .global-reset();
 //#populr > .inline-logo-title();
-#populr > .text-color-over-color(@custom-color);
+
 /////////////////////////////////////////////////////////////////////////
 // Typography defaults
 
@@ -42,6 +42,7 @@
   line-height: 1.1;
 }
 .cool-i-tag(@font-size:22px){
+    font-family:@italic-font;
     display: inline-block;
     border-left:6px solid @custom-color;
     padding:2px 0 2px 20px;
@@ -89,10 +90,7 @@
 #pop {
   margin-top: 0;
   font-family: @body-font-family;
-  color: @text-color;
   i, em { 
-    font-style: italic; 
-    font-family:@italic-font;
     font-style: italic;
     font-weight: 400;
     line-height: 1.2;
@@ -126,8 +124,12 @@
 }
 
 #main-region{
-    position:relative;
+    position: relative;
     padding-top:20px;
+    &>div:last-of-type{
+        padding-bottom:25px;
+    }
+    coor:@text-color;
 }
 
 #main-content { 
@@ -151,9 +153,10 @@
     text-align: center!important;
     padding:0!important; 
     font-size:42px;
+    #populr > .text-color-over-color(@custom-color);
 }
 .columnizer-row-inner{
-    background-color: green;
+    background-color: white;
     opacity:.9;
 }
 
@@ -221,18 +224,18 @@
 
 // Document asset styling
 #doc-title{
-        display: table-cell;
-        line-height: 1.4;
-        text-align: left;
-        vertical-align: middle;
-        height:39px;
-        padding-right:10px;
-        color: black!important;
-        font-size:14px;
-        text-transform: capitalize;
-        font-family:@italic-font;
-        max-width:227px;
-      }
+    display: table-cell;
+    line-height: 1.4;
+    text-align: left;
+    vertical-align: middle;
+    height:39px;
+    padding-right:10px;
+    color: black!important;
+    font-size:14px;
+    text-transform: capitalize;
+    font-family:@italic-font;
+    max-width:227px;
+}
 .documents {
   margin: 0 auto;
   padding: 30px 0;
@@ -267,10 +270,20 @@
         vertical-align: baseline;
         text-shadow: none!important;
         font-family:@body-font-family;
-        font-size:13px;
+        font-size:14px;
         font-weight:400;
+        &:hover{i.icon{color:rgba(255, 255, 255, 1);}}
       }
-      i.icon { font-style: normal !important; text-align: center; vertical-align: middle; top:-1px;}
+      i.icon { 
+        font-style: normal !important; text-align: center; vertical-align: middle;
+        font-size: 18px; margin-right:8px;position: relative; top:-1px; color: rgba(255, 255, 255, 0.5);
+        transition: color 0.5s ease;
+        -webkit-transition: color 0.5s ease;
+        -moz-transition: color 0.5s ease;
+        -ms-transition: color 0.5s ease;
+        -o-transition: color 0.5s ease;
+      }
+      
     }
   }
 }
@@ -325,9 +338,8 @@
     width:700px;
     background-color: lightgray;
     height:1px;
-
-
 }
+
 //without this div margin bottom was not working
 div#bottom-margin{
     height:40px;
@@ -335,12 +347,16 @@ div#bottom-margin{
     max-width:900px;
     margin:0 auto;
 }
-//pop-shearing last element (a tag) was block elemnt in firefox
+//pop-shearing last element (a tag) was block elemnt in firefox, which made that to get down from the row
 #pop-shearing {
     text-align: center;
     a{
         display: inline-block !important;
     }
+}
+.populr-webicon{
+    width:40px;
+    height:40px;
 }
 // Clearfix
 .clearfix:after {
