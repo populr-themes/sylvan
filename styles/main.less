@@ -70,7 +70,7 @@
     -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.2);
     -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.2);
     box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.2);
-    background: fade(@custom-color, 70%);
+    background-color: fade(@custom-color, 70%);
     max-width:15%;
     min-width: 2%;
     min-height: 20px;
@@ -325,7 +325,7 @@ div#bottom-margin{
 #meta {
   & .addthis_button_facebook_like {width: 66px;}
   width: 60px;
-  background: fade(@custom-color, 70%);
+  background-color: fade(@custom-color, 70%);
   float: right;
   position: fixed;
   min-height: 0px;
@@ -355,17 +355,13 @@ div#bottom-margin{
 
 
 // IE adjustments for last-child & font-awesome
-.lt-ie9 {
+html.lt-ie9 {
   .columnizer-cols3 {
     .columnizer-row-inner {
-      { .asset-container + .asset-container + .asset-container {
+      .asset-container + .asset-container + .asset-container {
         margin-left: 33px;
       }
     }
-  }
-
-  #meta, #cool-header {
-    background: @custom-color;
   }
 
   .icon-download-alt { margin-top: 10px !important; }
