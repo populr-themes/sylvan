@@ -23,15 +23,15 @@
     Average color can be computed by opening an image in Photoshop and shrinking it down to 1 pixel
   -->
 
-  <meta itemprop="defaultBackground" content="/images/bike.jpg" data-width="1246" data-height="523" data-position="c" data-style="fill">
+  <meta itemprop="defaultBackground" content="/images/abstract.jpg" data-width="1800" data-height="1800" data-position="c" data-style="fill">
 
   <!--
     Theme styles
     The Custom style presents Populr's end users with a color picker that sets the @custom-color variable
   -->
-  <meta itemprop="palette" content="palette-default" title="Default" data-preview="#fff,#000">
+  <meta itemprop="palette" content="palette-default" title="Default" data-preview="#57ad68">
   <meta itemprop="palette" content="palette-custom" data-preview="custom">
-  <meta itemprop="palette" content="palette-Neimar" title="Neimar" data-preview="orange">
+  <meta itemprop="palette" content="palette-Dark" title="Dark" data-preview="#000">
   <!-- Add any styles your theme requires here -->
   <link rel="stylesheet/less" type="text/css" href="styles/main.less">
 
@@ -40,8 +40,6 @@
 
   <!-- Add any javscript your theme requires here -->
   <script src="js/main.js"></script>
-  <script src="jquery.js"></script>
-  <script src="js/jquery.sticky.js"></script>
 
 </head>
 <body>
@@ -49,13 +47,7 @@
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
 
-     <div id="cool-header">
-        <div id="cool-header-responsive-problem-solving-div">
-            <div id="cool-header-inner">
-                {{logo max_width=120 max_height=40}}
-            </div>
-        </div>
-     </div>
+     <div id="cool-header">{{logo max_width=120 max_height=40}}</div>
     
     <div id="my-container">
     
