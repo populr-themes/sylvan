@@ -355,7 +355,7 @@ div#bottom-margin{
 
 
 // IE adjustments for last-child & font-awesome
-.ie {
+.lt-ie9 {
   .columnizer-cols3 {
     .columnizer-row-inner {
       { .asset-container + .asset-container + .asset-container {
@@ -365,9 +365,7 @@ div#bottom-margin{
   }
 
   #meta, #cool-header {
-    filter:alpha(opacity=70);
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-    background-color: @custom-color;
+    background: @custom-color;
   }
 
   .icon-download-alt { margin-top: 10px !important; }
@@ -406,7 +404,7 @@ div#bottom-margin{
 }
 
 @media screen and (max-width: 600px) {
-  #pop-title { font-size: 32px !important; line-height: 40px !important; }
+  #pop-title { font-size: 24px !important; line-height: 32px !important; }
   .asset-title { font-size: 20px !important; }
   #my-container { margin: 0 11% !important; width:60%!important; }
   #cool-header{
