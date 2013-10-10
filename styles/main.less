@@ -78,9 +78,6 @@
     overflow:hidden;
     padding:10px 0;
     padding: 8px;
-      filter:alpha(opacity=70);
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-    &.lt-ie8 { background-color: @custom-color; }
 }
 
 #pop {
@@ -338,9 +335,6 @@ div#bottom-margin{
   -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.2);
   -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.2);
   box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.2);
-  filter:alpha(opacity=70);
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-  &.lt-ie8 { background-color: @custom-color; }
 }
 
 
@@ -362,10 +356,21 @@ div#bottom-margin{
 
 // IE adjustments for last-child & font-awesome
 .lt-ie8 {
-  .columnizer-cols3.columnizer-row-inner { .asset-container + .asset-container + .asset-container { margin-left: 33px; } }
-}
-.lt-ie8 {
-  .icon.icon-download-alt { margin-top: 10px !important; }
+  .columnizer-cols3 {
+    .columnizer-row-inner {
+      { .asset-container + .asset-container + .asset-container {
+        margin-left: 33px;
+      }
+    }
+  }
+
+  #meta, #cool-header {
+    filter:alpha(opacity=70);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    background-color: @custom-color;
+  }
+
+  .icon-download-alt { margin-top: 10px !important; }
 }
 
 
