@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 
   <!-- Name of your theme -->
-  <title>White Space Theme</title>
+  <title>Medium</title>
 
   <!--
     Dummy content parameters
@@ -22,9 +22,8 @@
     Style values: fill, tile, fixed
     Average color can be computed by opening an image in Photoshop and shrinking it down to 1 pixel
   -->
-  <!--
-    <meta itemprop="defaultBackground" content="/images/background.jpg" data-width="1800" data-height="1800" data-position="c" data-style="fill" data-color="#665b42">
-  -->
+
+  <meta itemprop="defaultBackground" content="/images/bike.jpg" data-width="1246" data-height="523" data-position="c" data-style="fill">
 
   <!--
     Theme styles
@@ -41,6 +40,8 @@
 
   <!-- Add any javscript your theme requires here -->
   <script src="js/main.js"></script>
+  <script src="jquery.js"></script>
+  <script src="js/jquery.sticky.js"></script>
 
 </head>
 <body>
@@ -52,7 +53,6 @@
         <div id="cool-header-responsive-problem-solving-div">
             <div id="cool-header-inner">
                 {{logo max_width=120 max_height=40}}
-                {{pop_links}}
             </div>
         </div>
      </div>
@@ -79,14 +79,14 @@
       {{/asset}}
 
       {{#asset "imagegroup" size="1"}}
-        {{{imageslider images width="760" height="450"}}}
+        {{{imageslider images width="760" height="450" crop-single=true}}}
         {{{title}}}
         {{{description}}}
       {{/asset}}
  
       {{#asset "imagegroup" size="2"}}
         
-        {{{imageslider images width="345" height="230"}}}
+        {{{imageslider images width="365" height="230" crop-single=true}}}
         {{{title}}}
         {{{description}}}
       
@@ -94,7 +94,7 @@
   
       {{#asset "imagegroup" size="3"}}
        
-        {{{imageslider images width="206" height="230"}}}
+        {{{imageslider images width="230" height="230" crop-single=true}}}
         {{{title}}}
         {{{description}}}
       
@@ -141,7 +141,7 @@
         {{{description}}}
       {{/asset}}
 
-      {{#asset "embedgroup" size="2" width="345"}}
+      {{#asset "embedgroup" size="2" width="365"}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
@@ -149,7 +149,7 @@
         {{{description}}}
       {{/asset}}
 
-      {{#asset "embedgroup" size="3" width="266"}}
+      {{#asset "embedgroup" size="3" width="230"}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
@@ -158,11 +158,18 @@
       {{/asset}}
     
     {{/region}}
-     
-    
-    <div class="footer"></div>
-    <div id="bottom-margin"></div>
-    {{sharing}}
+
+
+    <div id="meta">
+      {{#sharing}}
+        <div id="pop-sharing" class="addthis_toolbox addthis_counter_style">
+          <a class="addthis_button_facebook_like" fb:like:layout="box_count"></a>
+          <a class="addthis_button_tweet" tw:count="vertical"></a>
+          <a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
+          <a class="addthis_counter"></a>
+        </div>
+      {{/sharing}}
+      {{{pop_links}}}
     </div>
 
   </script>

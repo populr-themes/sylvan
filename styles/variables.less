@@ -65,43 +65,66 @@
 @populr-theme-version: 1;
 
 // To use your own grid, edit the following properties as needed.
+// .columnizer-row-inner {
+//   margin: 0 auto;
+//   max-width: 900px;
+// }
+
+// .asset{
+//     padding:0 35px;
+// }
+
+// .columnizer-col {
+// 	float: left;
+// 	margin: 15px 0;
+
+// 	.columnizer-cols1 & { width: 900px;
+//             &:nth-of-type(1){
+//                 .asset{padding:0 70px;}
+//             }
+//         }
+// 	.columnizer-cols2 & { width: 450px;
+//             &:nth-of-type(1){
+//                 .asset{padding-left:70px;}
+//             }
+//             &:nth-of-type(2){
+//                 .asset{padding-right:70px;}
+//             }
+//         }
+// }
+
+// .columnizer-col {
+// 	.columnizer-cols3 & { width: 206px;
+// 		margin-left: 70px;
+//                 float: left;
+//             &:last-child { margin-right: 72px; }
+//             .asset{padding:0;}
+// 	}
+// }
+
+
+
+// // To use your own grid, edit the following properties as needed.
 .columnizer-row-inner {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 760px;
+  padding-bottom: 40px;
 }
-
-.asset{
-    padding:0 35px;
-}
-
 .columnizer-col {
-	float: left;
-	margin: 15px 0;
+    float: left;
+    // margin: 10px;
 
-	.columnizer-cols1 & { width: 900px;
-            &:nth-of-type(1){
-                .asset{padding:0 70px;}
-            }
-        }
-	.columnizer-cols2 & { width: 450px;
-            &:nth-of-type(1){
-                .asset{padding-left:70px;}
-            }
-            &:nth-of-type(2){
-                .asset{padding-right:70px;}
-            }
-        }
+    .columnizer-cols1 & { width: 760px; }
+    .columnizer-cols2 & {
+      width: 365px;
+      &:first-child { margin-right: 30px; }
+    }
+    .columnizer-cols3 & {
+      width: 230px;
+      &:first-child { margin-right: 33px; }
+      &:last-child { margin-left: 33px; }
+    }
 }
-
-.columnizer-col {
-	.columnizer-cols3 & { width: 206px;
-		margin-left: 70px;
-                float: left;
-            &:last-child { margin-right: 72px; }
-            .asset{padding:0;}
-	}
-}
-
 
 
 
