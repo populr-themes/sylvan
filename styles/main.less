@@ -80,6 +80,7 @@
     padding: 8px;
       filter:alpha(opacity=70);
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    &.lt-ie8 { background-color: @custom-color; }
 }
 
 #pop {
@@ -339,6 +340,7 @@ div#bottom-margin{
   box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.2);
   filter:alpha(opacity=70);
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  &.lt-ie8 { background-color: @custom-color; }
 }
 
 
@@ -356,6 +358,15 @@ div#bottom-margin{
 
 // End structure
 /////////////////////////////////////////////////////////////////////////
+
+
+// IE adjustments for last-child & font-awesome
+.lt-ie8 {
+  .columnizer-cols3.columnizer-row-inner { .asset-container + .asset-container + .asset-container { margin-left: 33px; } }
+}
+.lt-ie8 {
+  .icon.icon-download-alt { margin-top: 10px !important; }
+}
 
 
 /////////////////////////////////////////////////////////////////////////
