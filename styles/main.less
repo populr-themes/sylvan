@@ -70,7 +70,7 @@
     -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.2);
     -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.2);
     box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.2);
-    background: fade(@custom-color, 70%);
+    .setBackgroundColor(@custom-color, 0.7);
     max-width:15%;
     min-width: 2%;
     min-height: 20px;
@@ -132,6 +132,10 @@
 
 // Logo helper
 #pop-logo { margin: 0 auto; }
+
+.setBackgroundColor(@color, @alpha) {
+  color: fade(@color, @alpha);
+}
 
 // Pop title
 #my-pop-title{
@@ -325,7 +329,6 @@ div#bottom-margin{
 #meta {
   & .addthis_button_facebook_like {width: 66px;}
   width: 60px;
-  background: fade(@custom-color, 70%);
   float: right;
   position: fixed;
   min-height: 0px;
@@ -335,6 +338,7 @@ div#bottom-margin{
   -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.2);
   -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.2);
   box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.2);
+  .setBackgroundColor(@custom-color, 0.7);
 }
 
 
@@ -360,10 +364,6 @@ div#bottom-margin{
     .asset-container.columnizer-col.columnizer-col3 + .asset-container.columnizer-col.columnizer-col3 + .asset-container.columnizer-col.columnizer-col3 {
       margin-left: 33px;
     }
-  }
-
-  #meta, #cool-header {
-    background-color: @custom-color;
   }
 
   .icon-download-alt { margin-top: 10px !important; }
