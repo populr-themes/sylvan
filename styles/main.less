@@ -70,7 +70,8 @@
     -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.2);
     -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.2);
     box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.2);
-    .setBackgroundColor(@custom-color, 0.7);
+    background-color: @custom-color;
+    background-color: fade(@custom-color, 70%);
     max-width:15%;
     min-width: 2%;
     min-height: 20px;
@@ -132,10 +133,6 @@
 
 // Logo helper
 #pop-logo { margin: 0 auto; }
-
-.setBackgroundColor(@color, @alpha) {
-  background-color: fade(@color, @alpha);
-}
 
 // Pop title
 #my-pop-title{
@@ -338,7 +335,8 @@ div#bottom-margin{
   -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.2);
   -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.2);
   box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.2);
-  .setBackgroundColor(@custom-color, 0.7);
+  background-color: @custom-color;
+  background-color: fade(@custom-color, 70%);
 }
 
 
