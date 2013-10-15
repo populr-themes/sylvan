@@ -1,7 +1,8 @@
 var adjustMobileContainer = function() {
   if ($('meta').length) {
-    console.log('works');
-    $('#my-container').toggleClass('has-pop-sharing-links');
+    $('#my-container').addClass('has-pop-sharing-links');
+  } else {
+    $('#my-container').removeClass('has-pop-sharing-links');
   }
 };
 
