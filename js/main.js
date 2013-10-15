@@ -1,5 +1,5 @@
 var adjustMobileContainer = function() {
-  if ($('meta').length) {
+  if ($('#meta').length) {
     $('#my-container').addClass('has-pop-sharing-links');
   } else {
     $('#my-container').removeClass('has-pop-sharing-links');
