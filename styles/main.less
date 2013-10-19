@@ -406,7 +406,7 @@ div#bottom-margin{
   #populr > .mobile-reset();
 
   // Edit the grid for mobile
-  #pop-logo{max-width: 18% !important;}
+  #pop-logo{max-width: 100% !important;}
   #my-container{width:60%!important;max-width:640px;margin:0 auto 0;}
   .columnizer-row,#my-pop-title{width:auto!important;}
   .columnizer-row-inner, #pop-title{ width:auto!important;max-width: 700px;}
@@ -424,15 +424,19 @@ div#bottom-margin{
   .documents li a .download-button{float:left!important;margin-right:8px!important;}
 }
 
+@media screen and (max-width: 760px) {
+  #my-container{width:60%!important;max-width:640px;margin:0 25% 0;}
+}
+
 @media screen and (max-width: 600px) {
   #pop-title { font-size: 24px !important; line-height: 32px !important; }
   #main-content { margin: 200px auto 40px !important; }
   .asset-title { font-size: 20px !important; }
   #my-container { margin: 0 11% !important; width:80%!important; }
-  #my-container.has-pop-sharing-links { width:60%!important; }
+  #my-container.has-pop-sharing-links { width:65%!important; }
   #pop-logo{
-    min-width: 4% !important;
-    max-width: 30% !important;
+    // min-width: 4% !important;
+    // max-width: 30% !important;
     position: absolute;
     display: block;
     top: -65px;
