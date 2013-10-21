@@ -379,24 +379,26 @@ div#bottom-margin{
 /////////////////////////////////////////////////////////////////////////
 
 
-// IE adjustments for last-child & font-awesome
-.lt-ie9 {
-  .columnizer-row-inner {
-    .asset-container.columnizer-col.columnizer-col3 + .asset-container.columnizer-col.columnizer-col3 + .asset-container.columnizer-col.columnizer-col3 {
-      margin-left: 33px;
-    }
-  }
+// IE adjustments
 
-  .icon-download-alt { margin-top: 10px !important; }
-}
-
-// IE Specific media adjustments
 .lt-ie9 {
   #my-container { width:90% !important; }
   #pop-title { width: 90% !important; }
 
-  .columnizer-row, img {
+  #pop-logo{
+    position: absolute;
+    display: block;
+    top: -290px;
+    left:10px;
+  }
+
+  .columnizer-row {
     width: 90% !important;
+  }
+
+  img {
+    width: 100% !important;
+    height: auto !important;
   }
 
   .columnizer-row-inner {
@@ -405,18 +407,19 @@ div#bottom-margin{
 
   .columnizer-col.columnizer-col1 { width: 100% !important; }
   .asset-container.columnizer-col.columnizer-col2 { width: 47% !important; }
+  .asset-container.columnizer-col.columnizer-col2:first-child { margin-right: 6% !important; }
   .asset-container.columnizer-col.columnizer-col3 { width: 30% !important; }
+  .asset-container.columnizer-col.columnizer-col3:first-child { margin-right: 3% !important; }
 
-}
-
-.lt-ie9 {
-  #pop-logo{
-    position: absolute;
-    display: block;
-    top: -290px;
-    left:10px;
+  .columnizer-row-inner {
+    .asset-container.columnizer-col.columnizer-col3 + .asset-container.columnizer-col.columnizer-col3 + .asset-container.columnizer-col.columnizer-col3 {
+      margin-left: 3% !important;
+    }
   }
+
+  .icon-download-alt { margin-top: 10px !important; }
 }
+
 
 /////////////////////////////////////////////////////////////////////////
 // Mobile
