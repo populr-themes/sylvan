@@ -47,15 +47,14 @@
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
 
-     <div id="cool-header">{{logo max_width=100 max_height=40}}</div>
-    
+    <div id="cool-header">{{logo max_width=100 max_height=40}}</div>
+
     <div id="my-container">
-    <div id="my-container-inner">
-    
+
     <div id="my-pop-title">{{{title}}}</div>
-    
+
     {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|T-1,T-1|T-1,T-1,T-1|I-1|I-2|I-1,I-2|I-1,I-2,I-3|V-1|V-2|V-1,V-2|V-1,V-2,V-3|D-1|D-3|D-1,D-3|D-1,D-2,D-3|E-1|E-2|E-1,E-2|E-1,E-2,E-3"}}
-      
+
       {{#asset "text" size="1"}}
         {{{title}}}
         {{{body}}}
@@ -149,7 +148,7 @@
         {{{title}}}
         {{{description}}}
       {{/asset}}
-    
+
     {{/region}}
 
 
@@ -164,7 +163,6 @@
         </div>
       {{/sharing}}
     </div>
-  </div>
 
   </script>
 </body>
