@@ -22,15 +22,15 @@
 
 @text-color:  #333332;
 // @custom-color is defined in variables.less
-@link-color: #333332;
-@alternate-color: lighten(@text-color, 60%);
+@link-color: darken(@custom-color, 10%);
+@dark-link-color:  darken(@link-color, 30%);
 
 // Mixins
-.alternate-accent-color(@custom-color) when (luma(@custom-color) >= 95%) {
-  border-left: 6px solid @alternate-color !important;
+.alternate-accent-color(@custom-color) when (luma(@custom-color) >= 80%) {
+  border-left: 6px solid @dark-link-color !important;
 }
-.alternate-link-color(@custom-color) when (luma(@custom-color) >= 80%) {
-  color: lighten(@text-color, 20%);
+.alternate-link-color(@link-color) when (luma(@link-color) >= 80%) {
+  color: @dark-link-color;
 }
 .darken-custom-color(@custom-color) when (luma(@custom-color) >= 95%) {
   background-color: lighten(@text-color, 70%) !important;
@@ -111,10 +111,11 @@
 
   a {
     color: @link-color;
+    .alternate-link-color(@link-color);
     &:active { color: lighten(@link-color, 20%); }
     &:hover{
       color: @custom-color;
-      .alternate-link-color(@custom-color);
+      .alternate-link-color(@link-color);
     }
   }
 }
@@ -139,7 +140,7 @@
     &>div:last-of-type{
         padding-bottom:25px;
     }
-    coor:@text-color;
+    coor: @text-color;
 }
 
 #main-content {
@@ -200,13 +201,11 @@
   }
   p > i {
     .cool-i-tag(22px);
+    border-left: 6px solid @custom-color;
     .alternate-accent-color(@custom-color);
     display: block;
   }
   .description, .body, .description li, .body li,  {
-    // i{
-    //   .cool-i-tag(22px);
-    // }
   }
 }
 
