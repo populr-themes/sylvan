@@ -394,9 +394,21 @@ div#bottom-margin{
 .lt-ie8 {
   #my-container { width:70% !important; }
   #pop-title { width: 100% !important; }
-  .columnizer-cols1 { width: 100% !important; }
-  .columnizer-cols2, .columnizer-col2 { width: 48% !important; }
-  .columnizer-cols3, .columnizer-col3 { width: 30% !important; }
+
+  .columnizer-row-inner {
+    margin: 0 auto;
+    width: 70% !important;
+  }
+
+  .columnizer-col {
+    .columnizer-cols1 & { width: 100% !important; }
+    .columnizer-cols2 & {
+      width: 48% !important;
+    }
+    .columnizer-cols3 & {
+      width: 30% !important;
+    }
+  }
 }
 
 // .ie10, .ie9 { #my-container { margin: 0 16% !important; } }
