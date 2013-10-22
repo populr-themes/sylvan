@@ -83,10 +83,10 @@
     position: fixed;
     top:10px;
     left:10px;
-    -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.2);
-    -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.2);
-    box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.2);
-    background-color: @custom-color;
+    -webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
+    -moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.1);
+    box-shadow:         3px 3px 5px rgba(50, 50, 50, 0.1);
+    background-color: @white;
     zoom: 1;
     max-width:15%;
     min-width: 2%;
@@ -146,7 +146,7 @@
 #main-content {
     margin: 300px auto 40px;
     background-color: #fff;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 // Logo helper
@@ -199,7 +199,7 @@
   .asset-title {
     i {font-size:30px;}
   }
-  p > i {
+  .font-size-larger i {
     .cool-i-tag(22px);
     border-left: 6px solid @custom-color;
     .alternate-accent-color(@custom-color);
@@ -329,35 +329,14 @@ div#bottom-margin{
 
 //social and sharing links
 #meta {
-  & .addthis_button_facebook_like {width: 66px;}
-  width: 60px;
-  float: right;
-  position: fixed;
-  min-height: 0px;
-  top: 300px;
-  right: 5px;
-  padding: 10px 4px 4px;
-}
-
-#pop-sharing, #pop-links {
-  & .addthis_button_facebook_like {width: 66px;}
-  -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.2);
-  -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.2);
-  box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.2);
-  background-color: @custom-color;
-  zoom: 1;
-  filter: alpha(opacity=70);
-  opacity: 0.7;
-}
-
-#pop-sharing {
-  padding: 10px 0;
+  #pop-links { float: right; }
+  #pop-sharing { float: left; }
 }
 
 #pop-links {
-  margin: 0;
-  padding: 10px;
+  margin: 0 0 0 15px;
 }
+
 .populr-webicon {
   margin: 5px 0;
 }
