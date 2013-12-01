@@ -68,13 +68,13 @@
     line-height:1.4;
 }
 // Body text defaults
-@body-font-family: 'Libre Baskerville',Georgia, serif;;
+@body-font-family: 'Lora', Georgia, serif;;
 
-.body-text(@font-size:18px;@font-weight:400;@font-family:@body-font-family;) {
-  font-family: @font-family;
-  font-size: @font-size;
-  font-weight: @font-weight;
-  line-height: 28px;
+.body-text() {
+  font-family: @body-font-family;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
   text-align: left;
   font-style: normal;
 }
@@ -143,8 +143,10 @@
     coor: @text-color;
 }
 
+#background { height: 300px; }
 #main-content {
-    margin: 300px auto 40px;
+    // margin: 300px auto 40px;
+    margin: 0px auto 0px;
     background-color: #fff;
     padding-bottom: 20px;
 }
@@ -186,7 +188,6 @@
   ul li { list-style-type: disc; }
   ol li { list-style-type: decimal; }
   color: @text-color;
-  i b, b i { text-shadow: 0px 1px 1px #666 !important; }
 }
 //default i tag for asset-title
 .asset-title{
@@ -199,7 +200,6 @@
     i {font-size:30px;}
   }
   .font-size-larger {
-    b { text-shadow: 0px 1px 1px #666 !important; }
     i {
       .cool-i-tag(22px);
       border-left: 6px solid @custom-color;
@@ -422,11 +422,11 @@ div#bottom-margin{
     // Edit the typography for mobile
   #pop-title { font-size: 40px !important; }
   .asset-title { font-size: 24px !important;i{font-size:19px!important;} }
-  .description, .body, .description li, .body li { font-size: 14px !important;i{font-size: 13px!important;} }
   .asset-title, .description, .body, .description li, .body li { text-align: left !important; }
   //document-group
   #doc-title{display: table-cell!important;}
   .documents li a .download-button{float:left!important;margin-right:8px!important;}
+  .columnizer-row-inner .asset-container + .asset-container { margin-top: 30px !important;}
 }
 
 @media screen and (max-width: 760px) {
@@ -435,8 +435,10 @@ div#bottom-margin{
 
 @media screen and (max-width: 600px) {
   #pop-title { font-size: 24px !important; line-height: 32px !important; }
-  #main-content { margin: 100px auto 40px !important; }
+  #background { height: 200px; }
+  #main-content { margin: 0px auto 40px !important; }
   .asset-title { font-size: 20px !important; }
+  .description, .body, .description li, .body li { font-size: 16px !important;line-height: 1.6; i{font-size: 17px!important;} }
   #my-container { margin: 0 auto !important; width:80%!important; }
   #my-container.has-pop-sharing-links { width:75%!important; }
   #pop-logo{
@@ -444,12 +446,6 @@ div#bottom-margin{
     // max-width: 30% !important;
     position: absolute;
     display: block;
-    top: -73px;
-  }
-  .body i b, .body b i {
-    text-shadow: 0px 1px 0px #666 !important;
-  }
-  .body i .font-size-smaller b {
-    text-shadow: none !important;
+    top: 10px;
   }
 }

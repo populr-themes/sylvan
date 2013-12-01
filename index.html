@@ -23,6 +23,7 @@
     Average color can be computed by opening an image in Photoshop and shrinking it down to 1 pixel
   -->
 
+  <meta itemprop="backgroundContainer" content="#background">
   <meta itemprop="defaultBackground" content="/images/abstract.jpg" data-width="1800" data-height="1800" data-position="c" data-style="fill" data-color="#5E6A76">
 
   <!--
@@ -46,6 +47,7 @@
   <!-- Put your theme's HTML inside this script tag. The script tag will 
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
+    <div id="background"></div>
 
     <div id="cool-header">{{logo max_width=90 max_height=40}}</div>
 
@@ -156,6 +158,7 @@
       {{sharing}}
     </div>
 
+    <div id="background-footer"></div>
   </script>
 </body>
 </html>
