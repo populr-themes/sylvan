@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html itemscope>
+<head>
+  <meta charset="utf-8">
+
+  <!-- Name of your theme -->
+  <title>Sylvan</title>
+
+  <!--
+    Dummy content parameters
+  -->
+  <!-- dummyImageCategory: specify search term for images to pull from 500px -->
+  <meta itemprop="dummyImageCategory" content="All">
+  <!-- dummyContentLength: specify how much dummy text appears within each asset -->
+  <!-- Value can be set to short, medium or long -->
+  <meta itemprop="dummyContentLength" content="medium">
+
+  <!-- 
+    Default background images
+    The image's actual width & height must be set
+    Position values: c, nw, ne, sw, se
+    Style values: fill, tile, fixed
+    Average color can be computed by opening an image in Photoshop and shrinking it down to 1 pixel
+  -->
+
+  <meta itemprop="backgroundContainer" content="#background">
+  <meta itemprop="defaultBackground" content="/images/Sylvan.jpg" data-width="1800" data-height="1800" data-position="c" data-style="fill" data-color="#5E6A76">
+
+  <!--
+    Theme styles
+    The Custom style presents Populr's end users with a color picker that sets the @custom-color variable
+  -->
+  <meta itemprop="palette" content="palette-default" title="Default" data-preview="#57ad68">
+  <meta itemprop="palette" content="palette-custom" data-preview="custom">
+  <meta itemprop="palette" content="palette-Dark" title="Dark" data-preview="#000">
+  <!-- Add any styles your theme requires here -->
+  <link rel="stylesheet/less" type="text/css" href="styles/main.less">
+
+  <!-- This script loads the Populr theming engine. Populr will automatically remove it at runtime. -->
+  <script src="http://populr.me/assets/developers/themer.js"></script>
+
+  <!-- Add any javscript your theme requires here -->
+  <script src="js/main.js"></script>
+
+</head>
+<body>
+  <!-- Put your theme's HTML inside this script tag. The script tag will 
+       prevent issues with quote escaping and invalid markup. -->
+  <script id="theme" type="text/x-handlebars-template">
+    <div id="background"></div>
+
+    <div id="cool-header">{{logo max_width=90 max_height=40}}</div>
+
+    <div id="my-container">
+
+    <div id="my-pop-title">{{{title}}}</div>
+
+    {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|T-1,T-1|T-1,T-1,T-1|I-1|I-2|I-1,I-2|I-1,I-2,I-3|V-1|V-2|V-1,V-2|V-1,V-2,V-3|D-1|D-3|D-1,D-3|D-1,D-2,D-3|E-1|E-2|E-1,E-2|E-1,E-2,E-3"}}
+
+      {{#asset "text" size="1"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
+
+      {{#asset "text" size="2"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
+
+      {{#asset "text" size="3"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
+
+      {{#asset "imagegroup" size="1"}}
+        {{{imageslider images width="760" height="450" crop-single=true}}}
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
+ 
+      {{#asset "imagegroup" size="2"}}
+        
+        {{{imageslider images width="365" height="230" crop-single=true}}}
+        {{{title}}}
+        {{{description}}}
+      
+      {{/asset}}
+  
+      {{#asset "imagegroup" size="3"}}
+       
+        {{{imageslider images width="230" height="230" crop-single=true}}}
+        {{{title}}}
+        {{{description}}}
+      
+      {{/asset}}
+  
+      {{#asset "documentgroup" size="1"}}
+        {{{title}}}
+        {{{description}}}
+        <ul class="documents">
+          {{#documents}}
+            {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
+            <li><a href="{{original_url}}"><button class="download-button link-btn"><i class="icon icon-download-alt"/><span>Download</span></button><div id="doc-title">{{title}}</div></a></li>
+          {{/documents}}
+        </ul>
+      {{/asset}}
+ 
+      {{#asset "documentgroup" size="2"}}
+        {{{title}}}
+        {{{description}}}
+        <ul class="documents">
+          {{#documents}}
+            {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
+            <li><a href="{{original_url}}"><button class="link-btn download-button link-btn"><i class="icon icon-download-alt" /><span>Download</span></button><div id="doc-title">{{title}}</div></a></li>
+          {{/documents}}
+        </ul>
+      {{/asset}}
+ 
+      {{#asset "documentgroup" size="3"}}
+        {{{title}}}
+        {{{description}}}
+        <ul class="documents">
+          {{#documents}}
+            {{!--  The i tag gets styled by Font Awesome, which Populr pulls in automatically. --}}
+            <li><a href="{{original_url}}"><button class="download-button link-btn"><i class="icon icon-download-alt" /><span>Download</span></button><div id="doc-title">{{title}}</div></a></li>
+          {{/documents}}
+        </ul>
+      {{/asset}}
+ 
+      {{#asset "embedgroup" size="1" width="760"}}
+        {{#embeds}}
+          <div class="embed">{{{html}}}</div>
+        {{/embeds}}
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "embedgroup" size="2" width="365"}}
+        {{#embeds}}
+          <div class="embed">{{{html}}}</div>
+        {{/embeds}}
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "embedgroup" size="3" width="230"}}
+        {{#embeds}}
+          <div class="embed">{{{html}}}</div>
+        {{/embeds}}
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
+
+    {{/region}}
+
+    <div id="meta">
+      {{{pop_links}}}
+      {{sharing}}
+    </div>
+
+    <div id="background-footer"></div>
+  </script>
+</body>
+</html>

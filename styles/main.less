@@ -1,0 +1,459 @@
+/************************************************************************
+// For extensive details about creating a Populr theme, please visit
+// http://developers.populr.me/theming
+*/
+
+
+// You must import variables.less before importing populr_mixins.less
+@import 'palette-custom';
+@import 'palette-Dark';
+@import 'palette-default';
+@import 'variables';
+@import 'http://populr.me/assets/developers/populr_mixins.less';
+@import 'preboot';
+
+
+// Call preboot.less's reset to reduce browser inconsistencies
+#reset > .global-reset();
+//#populr > .inline-logo-title();
+
+/////////////////////////////////////////////////////////////////////////
+// Typography defaults
+
+@text-color:  #333332;
+// @custom-color is defined in variables.less
+@link-color: darken(@custom-color, 10%);
+@dark-link-color:  darken(@link-color, 30%);
+
+// Mixins
+.alternate-accent-color(@custom-color) when (luma(@custom-color) >= 80%) {
+  border-left: 6px solid @dark-link-color !important;
+}
+.alternate-link-color(@link-color) when (luma(@link-color) >= 80%) {
+  color: @dark-link-color;
+}
+.darken-custom-color(@custom-color) when (luma(@custom-color) >= 95%) {
+  background-color: lighten(@text-color, 70%) !important;
+}
+.darken-icon-color(@custom-color) when (luma(@custom-color) >= 80%) {
+  color: @text-color !important;
+}
+
+h1, h2, h3, h4, h5, .font-size-larger { text-shadow: 0 1px 1px rgba(0,0,0,0.4); }
+
+
+// Title text defaults
+// @headline-font-family is defined in variables.less
+
+.headline-text(@font-size:26px;@font-weight:bold;) {
+  font-family: @bold-font;
+  font-size: @font-size;
+  font-weight: @font-weight;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.pop-title-text() {
+  font-family: @headline-font-family;
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.cool-i-tag(@font-size:22px){
+    font-family:@body-font-family;
+    display: inline-block;
+    border-left:6px solid @custom-color;
+    padding:2px 0 2px 20px;
+    position: relative;
+    left: -20px;
+    font-size:@font-size;
+    line-height:1.4;
+}
+// Body text defaults
+@body-font-family: 'Lora', Georgia, serif;;
+
+.body-text() {
+  font-family: @body-font-family;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  font-style: normal;
+}
+//Cool Header
+#pop-logo {
+    position: fixed;
+    top:10px;
+    left:10px;
+    background-color: @white;
+    zoom: 1;
+    max-width:15%;
+    min-width: 2%;
+    min-height: 20px;
+    z-index:1000!important;
+    overflow:hidden;
+    padding:10px 0;
+    padding: 8px;
+}
+
+#pop {
+  margin-top: 0;
+  font-family: @body-font-family;
+  i, em {
+    font-style: italic;
+  }
+
+  b, strong {
+    font-weight: 700;
+    font-style: bold;
+  }
+
+  a {
+    color: @link-color;
+    .alternate-link-color(@link-color);
+    &:active { color: lighten(@link-color, 20%); }
+    &:hover{
+      color: @custom-color;
+      .alternate-link-color(@link-color);
+    }
+  }
+}
+
+// End typography defaults
+/////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////
+// Structure
+
+// Content wrapper
+#my-container{
+    position: relative;
+    width:760px;
+    margin:0 auto;
+}
+
+#main-region{
+    position: relative;
+    &>div:last-of-type{
+        padding-bottom:25px;
+    }
+    coor: @text-color;
+}
+
+
+
+#background { height: 300px; }
+#main-content {
+    // margin: 300px auto 40px;
+    margin: 0px auto 0px;
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+// Logo helper
+#pop-logo { margin: 0 auto; }
+
+// Pop title
+#my-pop-title{
+    width: 760px;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 40px;
+}
+#pop-title {
+    .pop-title-text();
+    text-align: center!important;
+    padding:0!important; 
+    font-size: 50px;
+    color: @text-color;
+}
+.columnizer-row-inner{
+    background-color: white;
+    // opacity:.9;
+}
+
+// Assets
+.asset-title {
+  .headline-text();
+  margin: 0px 20px 0 0;
+  color: @text-color;
+}
+
+.description, .body {
+  .body-text();
+
+  margin: 10px 0;
+  ul, ol { margin: .5em 0 .5em 1.5em; }
+  ul li { list-style-type: disc; }
+  ol li { list-style-type: decimal; }
+  color: @text-color;
+}
+//default i tag for asset-title
+.asset-title{
+    i{border-left:none!important;padding-left:0!important;}
+}
+// Text styling
+.columnizer-cols1 .font-size-larger i {
+  font-size: 30px !important;
+  line-height: 1.2 !important;
+}
+
+.columnizer-cols1{
+  .asset-title {
+    i {font-size:30px;}
+  }
+  .font-size-larger {
+    i {
+      .cool-i-tag(22px);
+      border-left: 6px solid @custom-color;
+      .alternate-accent-color(@custom-color);
+      display: block;
+    }
+  }
+}
+
+// Image asset styling
+#populr > #image-slider-themes > .basic();
+
+.populr-image-slider { margin-bottom: 10px;}
+
+.prevnext{display:none!important;}
+
+
+// Document asset styling
+#doc-title{
+    display: table-cell;
+    line-height: 1.4;
+    text-align: left;
+    vertical-align: middle;
+    height:39px;
+    padding-right:10px;
+    color: black!important;
+    font-size:14px;
+    text-transform: capitalize;
+    font-family:@body-font-family;
+    max-width:227px;
+}
+.documents {
+  margin: 16px auto 0;
+  li {
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+    a {
+      display: block;
+      text-decoration: none;
+      line-height: 1.2;
+      overflow: hidden;
+      varticle-align: middle;
+      .download-button{
+        border:0;
+        margin-bottom:8px;
+        min-width:158px!important;
+        float: left;
+        margin: 0 10px 8px 0;
+        color: #fff;
+        font-size: 13px;
+        text-align: center;
+        text-decoration: none;
+        font-style: normal;
+        cursor: pointer;
+        display: inline-block!important;
+        position: relative;
+        height: 40px;
+        line-height:1;
+        padding: 0 15px!important;
+        vertical-align: baseline;
+        text-shadow: none!important;
+        font-family:@body-font-family;
+        font-size:14px;
+        font-weight:400;
+        &:hover{i.icon{color:rgba(255, 255, 255, 1);}}
+      }
+      i.icon { 
+        font-style: normal !important; text-align: center; vertical-align: middle;
+        font-size: 18px; margin-right:8px;position: relative; top:-1px; color: rgba(255, 255, 255, 0.5);
+        transition: color 0.5s ease;
+        -webkit-transition: color 0.5s ease;
+        -moz-transition: color 0.5s ease;
+        -ms-transition: color 0.5s ease;
+        -o-transition: color 0.5s ease;
+      }
+    }
+  }
+}
+
+.embed{
+  margin-bottom:10px;
+}
+
+//text-align for cols3
+.columnizer-cols3{
+        .columnizer-col:nth-of-type(1),.columnizer-col:nth-of-type(3){
+            .doc-title{
+                max-width:100px;
+            }
+            .download-button{
+                width:100px;
+                margin:0 0 10px 0;
+            }
+        } 
+        #doc-title{
+            display: block;
+            margin: 0;
+        }
+        .documents li a .download-button{
+            float: none;
+        }
+}
+.columnizer-cols3{
+        .columnizer-col:nth-of-type(1){
+            .asset-title {
+                text-align:left;
+            }
+            .description, .body, .description li, .body li,  {
+                text-align:left;
+            }
+        }
+
+        .columnizer-col:nth-of-type(3){
+            text-align: left;
+        }
+}
+
+
+//without this div margin bottom was not working
+div#bottom-margin{
+    height:40px;
+    background-color: transparent;
+    max-width:900px;
+    margin:0 auto;
+}
+
+//social and sharing links
+#meta {
+  #pop-links { float: right; }
+  #pop-sharing { float: left; }
+}
+
+#pop-links {
+  margin: 0 0 0 15px;
+}
+
+.populr-webicon {
+  margin: 5px 0;
+}
+
+// Clearfix
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ' ';
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+// End structure
+/////////////////////////////////////////////////////////////////////////
+
+
+// IE adjustments
+
+.lt-ie9 {
+  #my-container { width:90% !important; }
+  #pop-title { width: 90% !important; margin: 0 auto !important; }
+
+  #pop-logo{
+    position: absolute;
+    display: block;
+    top: -290px;
+    left:10px;
+  }
+
+  .columnizer-row {
+    width: 90% !important;
+  }
+
+  .columnizer-row-inner {
+    max-width: 90% !important;
+  }
+
+  .columnizer-col.columnizer-col1 { width: 100% !important; }
+  .asset-container.columnizer-col.columnizer-col2 { width: 47% !important; }
+  .asset-container.columnizer-col.columnizer-col2:first-child { margin-right: 6% !important; }
+  .asset-container.columnizer-col.columnizer-col3 { width: 30% !important; }
+  .asset-container.columnizer-col.columnizer-col3:first-child { margin-right: 3% !important; }
+
+  .columnizer-row-inner {
+    .asset-container.columnizer-col.columnizer-col3 + .asset-container.columnizer-col.columnizer-col3 + .asset-container.columnizer-col.columnizer-col3 {
+      margin-left: 3% !important;
+    }
+  }
+
+  .icon-download-alt { margin-top: 10px !important; }
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+// Mobile
+//
+// The Populr mobile reset will handle some of the basics of mobilizing
+// your theme, such as stacking all of the assets vertically and scaling
+// them to 100% of the width of their container. However, you'll have to
+// fine tune the styling to make your theme look really good on mobile
+// devices.
+
+@media screen and (max-width: 1100px) {
+  #my-container { margin: 0 14.5% !important; }
+}
+
+@media screen and (max-width: 960px) {
+  #populr > .mobile-reset();
+
+  // Edit the grid for mobile
+  #pop-logo{max-width: 100% !important;}
+  #my-container{width:60%!important;max-width:640px;margin:0 auto 0 !important;}
+  .columnizer-row,#my-pop-title{width:auto!important;}
+  .columnizer-row-inner, #pop-title{ width:auto!important;max-width: 700px;}
+  .footer{width:50%!important; margin-left: auto; margin-right: auto;}
+  .asset-container{margin:0!important;padding:0!important;}
+  .asset{padding:0 !important;}
+  #pop-links{display:block!important; float:none!important; width:auto!important;}
+    // Edit the typography for mobile
+  #pop-title { font-size: 40px !important; }
+  .asset-title { font-size: 24px !important;i{font-size:19px!important;} }
+  .asset-title, .description, .body, .description li, .body li { text-align: left !important; }
+  //document-group
+  #doc-title{display: table-cell!important;}
+  .documents li a .download-button{float:left!important;margin-right:8px!important;}
+  .columnizer-row-inner .asset-container + .asset-container { margin-top: 30px !important;}
+}
+
+@media screen and (max-width: 760px) {
+  #my-container{width:60%!important;max-width:640px;margin:0 25% 0;}
+}
+
+@media screen and (max-width: 600px) {
+  #pop-title { font-size: 24px !important; line-height: 1.33!important; }
+  .columnizer-cols1 .font-size-larger i {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  #background { height: 200px; }
+  #main-content { margin: 0px auto 40px !important; }
+  .asset-title { font-size: 20px !important; }
+  .description, .body, .description li, .body li { font-size: 16px !important;line-height: 1.6; i{font-size: 17px!important;} }
+  #my-container { margin: 0 auto !important; width:80%!important; }
+  #my-container.has-pop-sharing-links { width:75%!important; }
+  #pop-logo{
+    // min-width: 4% !important;
+    // max-width: 30% !important;
+    position: absolute;
+    display: block;
+    top: 10px;
+  }
+}
