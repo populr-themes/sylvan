@@ -218,7 +218,36 @@ h1, h2, h3, h4, h5, .font-size-larger { text-shadow: 0 1px 1px rgba(0,0,0,0.4); 
 
 .populr-image-slider { margin-bottom: 10px;}
 
-.prevnext{display:none!important;}
+#image-wrapper {
+  position: relative;
+  &:hover {
+    span { display: block; }
+  }
+}
+
+#image-wrapper span {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  left: 50%;
+  margin-left: -23px;
+  top: 50%;
+  margin-top: -23px;
+  pointer-events: none;
+}
+
+.icon-plus {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 24px;
+  padding: 10px;
+  text-decoration: none;
+  text-shadow: 0 0 3px rgba(0,0,0,0.6);
+  font-style: normal !important;
+  background: @custom-color;
+  color: #fff;
+  opacity: .8;
+}
 
 
 // Document asset styling
@@ -332,10 +361,10 @@ div#bottom-margin{
 }
 
 //social and sharing links
-#meta {
-  #pop-links { float: right; }
-  #pop-sharing { float: left; }
-}
+// #meta {
+//   #pop-links { float: right; }
+//   #pop-sharing { float: left; }
+// }
 
 #pop-links {
   margin: 0 0 0 15px;

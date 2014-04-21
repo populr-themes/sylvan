@@ -73,22 +73,36 @@
       {{/asset}}
 
       {{#asset "imagegroup" size="1"}}
-        {{{imageslider images width="760" height="450" crop-single=true}}}
+        <div id="image-wrapper">
+          {{#if lightbox_enabled}}
+            <span><i class="icon icon-plus"/></span>
+          {{/if}}
+          {{{imageslider images width="760" height="450" crop-single=true prevnext-enabled=true pager-enabled=true}}}
+        </div>
         {{{title}}}
         {{{description}}}
       {{/asset}}
  
       {{#asset "imagegroup" size="2"}}
-        
-        {{{imageslider images width="365" height="230" crop-single=true}}}
+        <div id="image-wrapper">
+          {{#if lightbox_enabled}}
+            <span><i class="icon icon-plus"/></span>
+          {{/if}}
+          {{{imageslider images width="365" height="230" crop-single=true prevnext-enabled=true}}}
+        </div>
         {{{title}}}
         {{{description}}}
       
       {{/asset}}
   
       {{#asset "imagegroup" size="3"}}
+        <div id="image-wrapper">
+          {{#if lightbox_enabled}}
+            <span><i class="icon icon-plus"/></span>
+          {{/if}}
+          {{{imageslider images width="230" height="230" crop-single=true prevnext-enabled=true}}}
+        </div>
        
-        {{{imageslider images width="230" height="230" crop-single=true}}}
         {{{title}}}
         {{{description}}}
       
